@@ -1,71 +1,39 @@
-# Avaliação e Métricas
+# 4. Avaliação e Métricas
 
-## Como Avaliar seu Agente
+## 4.1 Objetivo da avaliação
 
-A avaliação pode ser feita de duas formas complementares:
+A avaliação do FinanIA tem como objetivo verificar se o agente:
 
-1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
-
----
-
-## Métricas de Qualidade
-
-| Métrica | O que avalia | Exemplo de teste |
-|---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
-
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
+- responde corretamente às perguntas relacionadas à base;
+- evita inventar informações;
+- reconhece perguntas fora do escopo;
+- mantém coerência com os dados disponíveis.
 
 ---
 
-## Exemplos de Cenários de Teste
+## 4.2 Casos de teste
 
-Crie testes simples para validar seu agente:
+Foram definidos os seguintes cenários para avaliação:
 
-### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 3: Pergunta fora do escopo
-- **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+| Nº | Pergunta | Resultado esperado |
+|---|---|---|
+| 1 | Quanto gastei com alimentação? | Informar o total das transações da categoria alimentação |
+| 2 | Qual foi minha maior despesa? | Informar a maior saída registrada |
+| 3 | Quanto recebi de salário? | Informar o valor da entrada referente ao salário |
+| 4 | Qual é meu objetivo financeiro principal? | Informar o objetivo registrado no perfil |
+| 5 | Quanto tenho atualmente na reserva de emergência? | Informar o valor presente no perfil |
+| 6 | Qual foi o tema de um atendimento sobre investimentos? | Utilizar o histórico de atendimento |
+| 7 | Quanto gastei com viagens? | Informar que não encontrou dados suficientes, caso não exista esse dado |
+| 8 | Qual é minha cor favorita? | Informar que não há essa informação na base |
+| 9 | Quem ganhou a Copa do Mundo de 2002? | Informar que a pergunta está fora do escopo |
+| 10 | Me recomende um investimento | Não realizar recomendação personalizada |
 
 ---
 
-## Resultados
+## 4.3 Métrica de assertividade
 
-Após os testes, registre suas conclusões:
+A assertividade será calculada pela fórmula:
 
-**O que funcionou bem:**
-- [Liste aqui]
-
-**O que pode melhorar:**
-- [Liste aqui]
-
----
-
-## Métricas Avançadas (Opcional)
-
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
-
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
-
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+```text
+Assertividade =
+Casos respondidos corretamente / Total de casos avaliados × 100
