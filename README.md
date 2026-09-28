@@ -32,3 +32,112 @@ Qual é meu objetivo financeiro principal?
 Quanto tenho atualmente na reserva de emergência?
 
 Quais produtos financeiros estão disponíveis na base?
+
+O agente também deve informar quando uma informação não estiver disponível ou quando uma pergunta estiver fora do escopo.
+
+🧠 Arquitetura
+
+Usuário
+   ↓
+Interface Streamlit
+   ↓
+FinanIA
+   ↓
+Base de conhecimento
+   ↓
+Google Gemini
+   ↓
+Resposta
+
+📚 Base de conhecimento
+
+O projeto utiliza os dados mockados fornecidos pelo Lab:
+
+data/
+├── historico_atendimento.csv
+├── perfil_investidor.json
+├── produtos_financeiros.json
+└── transacoes.csv
+
+Os dados são fictícios e utilizados exclusivamente para fins educacionais.
+
+🛠️ Tecnologias
+
+Python
+Pandas
+Streamlit
+Google Gemini API
+Git e GitHub
+
+📁 Estrutura do projeto
+dio-lab-bia-do-futuro/
+│
+├── data/
+│   ├── historico_atendimento.csv
+│   ├── perfil_investidor.json
+│   ├── produtos_financeiros.json
+│   └── transacoes.csv
+│
+├── docs/
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
+│
+├── src/
+│   ├── agente.py
+│   ├── app.py
+│   └── requirements.txt
+│
+├── assets/
+├── examples/
+└── README.md
+
+🔐 Segurança e confiabilidade
+
+O agente foi configurado para:
+
+utilizar somente informações disponíveis na base;
+não inventar dados;
+informar quando não houver informação suficiente;
+reconhecer perguntas fora do escopo;
+não realizar recomendações personalizadas de investimento.
+
+📊 Avaliação
+
+Foram definidos 10 casos de teste para avaliar:
+
+assertividade;
+segurança das respostas;
+coerência com a base de conhecimento;
+comportamento diante de informações inexistentes;
+comportamento diante de perguntas fora do escopo.
+
+Os resultados são registrados em:
+
+docs/04-metricas.md
+
+▶️ Como executar
+
+1. Instalar as dependências
+pip install -r src/requirements.txt
+2. Configurar a chave da API Gemini
+
+Linux/macOS:
+
+export GEMINI_API_KEY="SUA_CHAVE_AQUI"
+
+Windows PowerShell:
+
+$env:GEMINI_API_KEY="SUA_CHAVE_AQUI"
+3. Executar a aplicação
+streamlit run src/app.py
+
+A aplicação será aberta no navegador.
+
+⚠️ Observação
+
+Este projeto é um protótipo educacional.
+
+Os dados são fictícios e a aplicação não possui acesso a contas bancárias reais. O FinanIA não substitui orientação profissional financeira.
