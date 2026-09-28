@@ -1,3 +1,4 @@
+```markdown
 # 💰 FinanIA — Assistente Inteligente de Organização Financeira
 
 Projeto desenvolvido para o Lab **"Construa Seu Assistente Virtual com Inteligência Artificial"** da Digital Innovation One (DIO).
@@ -33,23 +34,25 @@ Quanto tenho atualmente na reserva de emergência?
 
 Quais produtos financeiros estão disponíveis na base?
 
+```
+
 O agente também deve informar quando uma informação não estiver disponível ou quando uma pergunta estiver fora do escopo.
 
-#🧠 Arquitetura
+## 🧠 Arquitetura
 
 Usuário
-   ↓
+↓
 Interface Streamlit
-   ↓
+↓
 FinanIA
-   ↓
+↓
 Base de conhecimento
-   ↓
+↓
 Google Gemini
-   ↓
+↓
 Resposta
 
-#📚 Base de conhecimento
+## 📚 Base de conhecimento
 
 O projeto utiliza os dados mockados fornecidos pelo Lab:
 
@@ -61,7 +64,7 @@ data/
 
 Os dados são fictícios e utilizados exclusivamente para fins educacionais.
 
-#🛠️ Tecnologias
+## 🛠️ Tecnologias
 
 Python
 Pandas
@@ -69,7 +72,8 @@ Streamlit
 Google Gemini API
 Git e GitHub
 
-##📁 Estrutura do projeto
+## 📁 Estrutura do projeto
+
 dio-lab-bia-do-futuro/
 │
 ├── data/
@@ -94,7 +98,7 @@ dio-lab-bia-do-futuro/
 ├── examples/
 └── README.md
 
-#🔐 Segurança e confiabilidade
+## 🔐 Segurança e confiabilidade
 
 O agente foi configurado para:
 
@@ -104,7 +108,7 @@ informar quando não houver informação suficiente;
 reconhecer perguntas fora do escopo;
 não realizar recomendações personalizadas de investimento.
 
-##📊 Avaliação
+## 📊 Avaliação
 
 Foram definidos 10 casos de teste para avaliar:
 
@@ -117,11 +121,13 @@ comportamento diante de perguntas fora do escopo.
 Os resultados são registrados em:
 docs/04-metricas.md
 
-#▶️ Como executar
+## ▶️ Como executar
 
-##1. Instalar as dependências
+### 1. Instalar as dependências
+
 pip install -r src/requirements.txt
-##2. Configurar a chave da API Gemini
+
+### 2. Configurar a chave da API Gemini
 
 Linux/macOS:
 
@@ -130,13 +136,19 @@ export GEMINI_API_KEY="SUA_CHAVE_AQUI"
 Windows PowerShell:
 
 $env:GEMINI_API_KEY="SUA_CHAVE_AQUI"
-##3. Executar a aplicação
+
+### 3. Executar a aplicação
+
 streamlit run src/app.py
 
 A aplicação será aberta no navegador.
 
-#⚠️ Observação
+## ⚠️ Observação
 
 Este projeto é um protótipo educacional.
 
 Os dados são fictícios e a aplicação não possui acesso a contas bancárias reais. O FinanIA não substitui orientação profissional financeira.
+
+```
+
+```
