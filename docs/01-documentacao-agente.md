@@ -1,81 +1,87 @@
-# Documentação do Agente
+# 1. Documentação do Agente
 
-## Caso de Uso
+## Nome do agente
 
-### Problema
-> Qual problema financeiro seu agente resolve?
+**FinanIA — Assistente Inteligente de Organização Financeira**
 
-[Sua descrição aqui]
+## 1.1 Caso de uso
 
-### Solução
-> Como o agente resolve esse problema de forma proativa?
+O FinanIA é um assistente virtual desenvolvido com Inteligência Artificial Generativa para auxiliar na consulta e compreensão de informações financeiras presentes em uma base de dados.
 
-[Sua descrição aqui]
+O agente permite que a pessoa usuária faça perguntas em linguagem natural sobre suas transações, perfil financeiro, metas e histórico de atendimento.
 
-### Público-Alvo
-> Quem vai usar esse agente?
+O objetivo é facilitar o acesso às informações e apoiar a organização financeira por meio de respostas simples, claras e baseadas nos dados disponíveis.
 
-[Sua descrição aqui]
+### Exemplos de perguntas
 
----
+- Quanto eu gastei com alimentação?
+- Qual foi minha maior despesa?
+- Quanto recebi de salário?
+- Quais são minhas principais categorias de gastos?
+- Qual é meu objetivo financeiro principal?
+- Quanto falta para minha reserva de emergência?
+- Qual foi o assunto do meu último atendimento?
+- Quais produtos financeiros estão disponíveis na base?
 
-## Persona e Tom de Voz
-
-### Nome do Agente
-[Nome escolhido]
-
-### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
-
-[Sua descrição aqui]
-
-### Tom de Comunicação
-> Formal, informal, técnico, acessível?
-
-[Sua descrição aqui]
-
-### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+O agente não substitui um profissional financeiro e não realiza recomendações personalizadas de investimentos.
 
 ---
 
-## Arquitetura
+## 1.2 Público-alvo
 
-### Diagrama
+O protótipo é destinado a pessoas que desejam consultar e compreender informações de sua vida financeira de maneira mais simples, utilizando linguagem natural.
 
-```mermaid
-flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
-```
-
-### Componentes
-
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+Os dados utilizados no projeto são fictícios e foram disponibilizados pela DIO para fins educacionais.
 
 ---
 
-## Segurança e Anti-Alucinação
+## 1.3 Persona e tom de voz
 
-### Estratégias Adotadas
+O FinanIA possui uma personalidade de assistente financeiro digital, organizado, didático e transparente.
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+Seu tom de voz deve ser:
 
-### Limitações Declaradas
-> O que o agente NÃO faz?
+- claro;
+- objetivo;
+- educado;
+- didático;
+- acessível;
+- transparente sobre suas limitações.
 
-[Liste aqui as limitações explícitas do agente]
+O agente deve evitar linguagem excessivamente técnica quando ela não for necessária.
+
+---
+
+## 1.4 Comportamento esperado
+
+O FinanIA deve:
+
+1. Interpretar a pergunta da pessoa usuária.
+2. Consultar as informações disponíveis na base de conhecimento.
+3. Responder utilizando somente informações presentes na base.
+4. Apresentar valores e informações de forma clara.
+5. Informar quando não houver dados suficientes para responder.
+6. Recusar perguntas que estejam fora do objetivo do agente.
+7. Não inventar dados, valores, produtos ou informações.
+8. Não realizar recomendações de investimento como se fossem aconselhamento profissional.
+
+---
+
+## 1.5 Arquitetura
+
+O fluxo simplificado da aplicação é:
+
+```text
+Pessoa usuária
+      ↓
+Interface Streamlit
+      ↓
+Pergunta do usuário
+      ↓
+FinanIA
+      ↓
+Base de conhecimento
+      ↓
+LLM Gemini
+      ↓
+Resposta
