@@ -2,28 +2,28 @@
 
 Projeto desenvolvido para o Lab **"Construa Seu Assistente Virtual com Inteligência Artificial"** da Digital Innovation One (DIO).
 
-O projeto foi desenvolvido a partir do repositório-base disponibilizado pela DIO e adaptado para criar o **FinanIA**, um assistente virtual capaz de consultar e explicar informações financeiras presentes em uma base de conhecimento.
+O FinanIA é um assistente virtual desenvolvido em Python que utiliza a API do Google Gemini para responder perguntas em linguagem natural sobre informações financeiras fictícias presentes em uma base de conhecimento.
 
 ## 🎯 Objetivo
 
-O FinanIA utiliza Inteligência Artificial Generativa para permitir que uma pessoa usuária faça perguntas em linguagem natural sobre informações financeiras fictícias.
+O objetivo do projeto é demonstrar a construção de um assistente virtual capaz de consultar, interpretar e explicar informações presentes em uma base de conhecimento.
 
-O agente pode auxiliar na consulta de:
+O FinanIA pode auxiliar na consulta de:
 
 - transações;
-- gastos por categoria;
+- gastos;
 - receitas;
 - metas financeiras;
 - perfil financeiro;
 - histórico de atendimento;
-- informações sobre produtos presentes na base.
+- produtos financeiros disponíveis na base.
 
 ## 🤖 Exemplos de perguntas
 
 ```text
 Quanto gastei com alimentação?
 
-Qual foi minha maior despesa?
+Quais são meus maiores gastos?
 
 Quanto recebi de salário?
 
@@ -31,11 +31,10 @@ Qual é meu objetivo financeiro principal?
 
 Quanto tenho atualmente na reserva de emergência?
 
-Quais produtos financeiros estão disponíveis na base?
+Quais produtos financeiros estão disponíveis?
+````
 
-```
-
-O agente também deve informar quando uma informação não estiver disponível ou quando uma pergunta estiver fora do escopo.
+O assistente também foi configurado para informar quando uma informação não está disponível na base ou quando uma pergunta está fora do escopo da aplicação.
 
 ## 🧠 Arquitetura
 
@@ -51,12 +50,11 @@ Base de conhecimento
 Google Gemini
    ↓
 Resposta
-
 ```
 
 ## 📚 Base de conhecimento
 
-O projeto utiliza os dados mockados fornecidos pelo Lab:
+O projeto utiliza dados fictícios para fins educacionais:
 
 ```text
 data/
@@ -64,10 +62,9 @@ data/
 ├── perfil_investidor.json
 ├── produtos_financeiros.json
 └── transacoes.csv
-
 ```
 
-Os dados são fictícios e utilizados exclusivamente para fins educacionais.
+A aplicação utiliza esses arquivos como fonte de informações sobre o perfil e o histórico financeiro apresentado ao assistente.
 
 ## 🛠️ Tecnologias
 
@@ -88,46 +85,38 @@ dio-lab-bia-do-futuro/
 │   ├── produtos_financeiros.json
 │   └── transacoes.csv
 │
-├── docs/
-│   ├── 01-documentacao-agente.md
-│   ├── 02-base-conhecimento.md
-│   ├── 03-prompts.md
-│   ├── 04-metricas.md
-│   └── 05-pitch.md
-│
 ├── src/
 │   ├── agente.py
 │   ├── app.py
 │   └── requirements.txt
 │
-├── assets/
-├── examples/
 └── README.md
-
 ```
 
 ## 🔐 Segurança e confiabilidade
 
 O agente foi configurado para:
 
-* utilizar somente informações disponíveis na base;
+* utilizar somente informações disponíveis na base de conhecimento;
 * não inventar dados;
 * informar quando não houver informação suficiente;
 * reconhecer perguntas fora do escopo;
 * não realizar recomendações personalizadas de investimento.
 
-## 📊 Avaliação
+A chave da API Gemini deve ser configurada por meio da variável de ambiente `GEMINI_API_KEY` e não deve ser armazenada no código ou no repositório.
 
-Foram definidos 10 casos de teste para avaliar:
+## 🧪 Testes realizados
 
-* assertividade;
-* segurança das respostas;
-* coerência com a base de conhecimento;
-* comportamento diante de informações inexistentes;
-* comportamento diante de perguntas fora do escopo.
+Durante a validação da aplicação, foram testadas perguntas relacionadas a:
 
-Os resultados são registrados em:
-`docs/04-metricas.md`
+* gastos com alimentação;
+* maiores gastos;
+* perfil financeiro;
+* produtos financeiros;
+* histórico de atendimento;
+* perguntas sobre informações que não estão presentes na base.
+
+Também foi verificado o comportamento do assistente diante de uma pergunta fora do escopo, que resultou em uma resposta informando que não havia dados suficientes para respondê-la.
 
 ## ▶️ Como executar
 
@@ -135,7 +124,6 @@ Os resultados são registrados em:
 
 ```bash
 pip install -r src/requirements.txt
-
 ```
 
 ### 2. Configurar a chave da API Gemini
@@ -144,31 +132,24 @@ Linux/macOS:
 
 ```bash
 export GEMINI_API_KEY="SUA_CHAVE_AQUI"
-
 ```
 
 Windows PowerShell:
 
 ```powershell
 $env:GEMINI_API_KEY="SUA_CHAVE_AQUI"
-
 ```
 
 ### 3. Executar a aplicação
 
 ```bash
 streamlit run src/app.py
-
 ```
 
-A aplicação será aberta no navegador.
+A aplicação será disponibilizada no navegador pelo Streamlit.
 
 ## ⚠️ Observação
 
 Este projeto é um protótipo educacional.
 
-Os dados são fictícios e a aplicação não possui acesso a contas bancárias reais. O FinanIA não substitui orientação profissional financeira.
-
-```
-
-```
+Os dados utilizados são fictícios e a aplicação não possui acesso a contas bancárias reais. O FinanIA não substitui orientação profissional financeira.
