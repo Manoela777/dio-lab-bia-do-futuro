@@ -1,44 +1,25 @@
-# Pitch (3 minutos)
+# 5. Pitch
 
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
+## Roteiro do Pitch — FinanIA
 
-### 1. O Problema (30 seg)
-> Qual dor do cliente você resolve?
+Olá, meu nome é Manoela e este é o FinanIA, um assistente virtual desenvolvido durante o Lab da DIO sobre construção de assistentes virtuais com Inteligência Artificial.
 
-[Sua descrição aqui]
+O problema que o projeto busca resolver é a dificuldade de consultar e compreender informações financeiras quando elas estão organizadas em diferentes registros.
 
-### 2. A Solução (1 min)
-> Como seu agente resolve esse problema?
+A proposta do FinanIA é permitir que a pessoa usuária faça perguntas em linguagem natural sobre seus dados financeiros.
 
-[Sua descrição aqui]
+O assistente utiliza uma base de conhecimento composta por transações, histórico de atendimentos, informações de perfil e produtos financeiros.
 
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
+Na prática, a pessoa pode perguntar, por exemplo, quanto gastou com alimentação, qual foi sua maior despesa ou qual é seu principal objetivo financeiro.
 
-[Descreva o que será mostrado]
+A aplicação foi desenvolvida em Python utilizando Streamlit para a interface, Pandas para manipulação dos dados e a API Gemini para geração das respostas.
 
-### 4. Diferencial e Impacto (30 seg)
-> Por que essa solução é inovadora e qual é o impacto dela na sociedade?
+Um ponto importante do projeto é a preocupação com a confiabilidade. O agente recebe instruções para utilizar somente as informações presentes na base e informar quando não possui dados suficientes para responder.
 
-[Sua descrição aqui]
+Também foram definidos casos de teste para avaliar a assertividade das respostas e a capacidade do agente de evitar informações inventadas.
 
----
+O projeto é um protótipo educacional e utiliza dados fictícios. Como próximos passos, seria possível ampliar a base de conhecimento, criar mais testes, melhorar a validação das respostas e desenvolver novas funcionalidades de análise.
 
-## Checklist do Pitch
+Esse projeto permitiu aplicar conceitos de Inteligência Artificial Generativa, engenharia de prompts, manipulação de dados e desenvolvimento de uma aplicação funcional.
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
-
----
-
-## Link do Vídeo
-
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+Obrigada!
