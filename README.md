@@ -1,4 +1,3 @@
-```markdown
 # 💰 FinanIA — Assistente Inteligente de Organização Financeira
 
 Projeto desenvolvido para o Lab **"Construa Seu Assistente Virtual com Inteligência Artificial"** da Digital Innovation One (DIO).
@@ -40,40 +39,47 @@ O agente também deve informar quando uma informação não estiver disponível 
 
 ## 🧠 Arquitetura
 
+```text
 Usuário
-↓
+   ↓
 Interface Streamlit
-↓
+   ↓
 FinanIA
-↓
+   ↓
 Base de conhecimento
-↓
+   ↓
 Google Gemini
-↓
+   ↓
 Resposta
+
+```
 
 ## 📚 Base de conhecimento
 
 O projeto utiliza os dados mockados fornecidos pelo Lab:
 
+```text
 data/
 ├── historico_atendimento.csv
 ├── perfil_investidor.json
 ├── produtos_financeiros.json
 └── transacoes.csv
 
+```
+
 Os dados são fictícios e utilizados exclusivamente para fins educacionais.
 
 ## 🛠️ Tecnologias
 
-Python
-Pandas
-Streamlit
-Google Gemini API
-Git e GitHub
+* Python
+* Pandas
+* Streamlit
+* Google Gemini API
+* Git e GitHub
 
 ## 📁 Estrutura do projeto
 
+```text
 dio-lab-bia-do-futuro/
 │
 ├── data/
@@ -98,48 +104,62 @@ dio-lab-bia-do-futuro/
 ├── examples/
 └── README.md
 
+```
+
 ## 🔐 Segurança e confiabilidade
 
 O agente foi configurado para:
 
-utilizar somente informações disponíveis na base;
-não inventar dados;
-informar quando não houver informação suficiente;
-reconhecer perguntas fora do escopo;
-não realizar recomendações personalizadas de investimento.
+* utilizar somente informações disponíveis na base;
+* não inventar dados;
+* informar quando não houver informação suficiente;
+* reconhecer perguntas fora do escopo;
+* não realizar recomendações personalizadas de investimento.
 
 ## 📊 Avaliação
 
 Foram definidos 10 casos de teste para avaliar:
 
-assertividade;
-segurança das respostas;
-coerência com a base de conhecimento;
-comportamento diante de informações inexistentes;
-comportamento diante de perguntas fora do escopo.
+* assertividade;
+* segurança das respostas;
+* coerência com a base de conhecimento;
+* comportamento diante de informações inexistentes;
+* comportamento diante de perguntas fora do escopo.
 
 Os resultados são registrados em:
-docs/04-metricas.md
+`docs/04-metricas.md`
 
 ## ▶️ Como executar
 
 ### 1. Instalar as dependências
 
+```bash
 pip install -r src/requirements.txt
+
+```
 
 ### 2. Configurar a chave da API Gemini
 
 Linux/macOS:
 
+```bash
 export GEMINI_API_KEY="SUA_CHAVE_AQUI"
+
+```
 
 Windows PowerShell:
 
+```powershell
 $env:GEMINI_API_KEY="SUA_CHAVE_AQUI"
+
+```
 
 ### 3. Executar a aplicação
 
+```bash
 streamlit run src/app.py
+
+```
 
 A aplicação será aberta no navegador.
 
